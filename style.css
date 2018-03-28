@@ -1,0 +1,487 @@
+*{
+	font-family: nunito;
+}
+
+body{
+	margin: 0;
+	background: rgb(221,230,242);
+	transition: 400ms background;
+}
+
+@font-face{
+	font-family: "nunito-black";
+	src:"Nunito-Black.ttf";
+}
+@font-face{
+	font-family: "nunito-ebold";
+	src:"Nunito-ExtraBold.ttf";
+}
+@font-face{
+	font-family: "nunito-bold";
+	src:"Nunito-Bold.ttf";
+}
+@font-face{
+	font-family: "nunito-semibold";
+	src:"Nunito-SemiBold.ttf";
+}
+@font-face{
+	font-family: "nunito-regular";
+	src:"Nunito-Regular.ttf";
+}
+@font-face{
+	font-family: "nunito-light";
+	src:"Nunito-Light.ttf";
+}
+@font-face{
+	font-family: "nunito-elight";
+	src:"Nunito-ExtraLight.ttf";
+}
+
+/* ---------------------------------------------- */
+
+main{
+	width: 1200px;
+	height: auto;
+	min-height: 100vh;
+	margin: 0 auto;
+}
+header{
+	padding: 40px 0;
+	transform: translate3d(0,-100%,0);
+	transition: 400ms transform;
+	transition-delay: 400ms;
+}
+
+.header-sub{
+	position: relative;
+	height: 40px;
+}
+.left{
+	float: left;
+	left: 0;
+	right: auto;
+}
+.right{
+	float: right;
+	right: 0;
+	left: auto;
+}
+.dash{
+	width: 45px;
+	height: 4px;
+	background:rgb(58, 71, 90);
+	top: 22px;
+	border-radius: 2px;
+}
+.title{
+	font-family: nunito;
+	font-weight: 800;
+	font-size: 36px;
+	margin-left: 20px;
+	color: rgb(58, 71, 90);
+}
+
+.button-container{
+	padding: 0 15px;
+	width: auto;
+	width: 80px;
+}
+.button{
+	position: absolute;
+	bottom: 4px;
+	padding: 5px 0px;
+	width: 80px;
+	text-align: center;
+	background: rgb(240,240,240);
+	border: 1px solid rgb(200,200,200);
+	font-size: 14px;
+	border-radius: 5px;
+	right: 0;
+	cursor: pointer;
+	font-weight: 600;
+	color: rgb(60,60,60);
+}
+.button.selected{
+	background: #2196f3;
+	color: white;
+	border-color: #1C93f0;
+}
+
+.search-box-container{
+	width: 100px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+.search-box{
+	position: absolute;
+	bottom: 5px;
+	height: 25px;
+	width: 100px;
+	border: 2px solid #f24235;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 25px;
+	text-align: center;
+	background-color: #f44336;
+	color: white;
+}
+
+.header-seperator{
+	width: 100%;
+	height: 4px;
+	border-radius: 2px;
+	background: linear-gradient(to right,#424242,#FAFAFA); 
+	margin: 40px 0;
+	transform-origin: 100% 50%;
+	transform: scaleX(0); 
+	transition: 400ms;
+	transition-delay: 400ms; 
+}
+.header-seperator-expand{transform: scaleX(1);
+}
+
+.modal{
+	position: absolute;
+	top: 170px;
+}
+
+.modal-title{
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.5;
+	opacity: 0;
+	transition: 400ms;
+	transition-timing-function: ease-in;
+}
+
+.palletes-container{
+	margin-top: 40px;
+}
+.pallete{
+	position: relative;
+	float: left;
+	margin-right: 60px;
+	height: 240px;
+	width: 240px;
+	border: 1px solid rgb(220,220,220);
+	padding: 15px;
+	box-sizing: border-box;
+	border-radius: 12px;
+	box-shadow: 0 2px 3px 0px rgba(0,0,0,0.15);
+	transition: 400ms;
+	transition-timing-function: (1,0,0,1);
+	margin-bottom: 60px;
+	transform: scale(0);
+	background: white;
+}
+.pallete-enlarge{
+	transform: scale(1);
+}
+
+.add-pallete{
+	cursor: pointer;
+}
+
+.add-pallete .img-container{
+	height: 60px;
+	width: 60px;
+	position: absolute;
+	top: 42%;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+	overflow: hidden;
+}
+.img-container img{
+	height: 100%;
+	width: 100%;
+}
+.add-pallete .text{
+	position: absolute;
+	text-align: center;
+	bottom: 40px;
+	width: 100%;
+	left: 0;
+	background: white;
+	font-size: 18px;
+	color: #607D8B;
+	font-weight: 700;
+}
+
+.pallete-invisible{
+
+	height: 0 !important;
+	width: 0 !important;
+	margin-right: 0 !important;
+	padding: 0 !important;
+	transform: scale(0) !important;
+}
+
+.pallete-title{
+	color: #00BCD4;
+	font-size: 22px;
+	font-weight: 700;
+}
+.pallete-button{
+	width: calc(100% - 30px);
+	border-radius: 8px;
+	background: #00BCD4;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	color: white;
+	position: absolute;
+	bottom: 15px;
+	cursor: pointer;
+}
+
+.pallete-text-1{
+	margin-top: 20px;
+	text-align: right;
+	color: #607D8B;
+	font-size: 18px;
+}
+.pallete-text-2, .pallete-text-3{
+	text-align: right;
+	color: #212121;
+	font-size: 16px;
+	margin-top: 7px;
+}
+
+
+
+
+.medicine-pallete .pallete-title{
+	color: #009688;
+}
+.medicine-pallete .pallete-button{
+	background-color: #009688;
+}
+
+.missed-pallete .pallete-title{
+	color: #f44336;
+}
+.missed-pallete .pallete-button{
+	background-color: #f44336
+}
+
+
+
+
+
+
+/* Medicine Dialog*/
+
+.medicine-dialog-center, .missed-reason-dialog{
+	position: fixed;
+	height: 360px;
+	width: 360px;
+	
+	background: white;
+	top: 50%;
+	left: 50%;
+	border-radius: 15px;
+	transform: translate3d(-50%,50vh,0);
+	transition: 400ms;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	z-index: 9999;
+	padding: 25px;
+	box-sizing: border-box;
+}
+.medicine-dialog-focus, .missed-reason-dialog-focus{
+	transform: translate3d(-50%,-50%,0);
+}
+
+.missed-reason-dialog textarea{
+	margin-top: 30px;
+	width: calc(100% - 0px);
+	min-width: calc(100% - 0px);
+	max-width: calc(100% - 0px);
+	padding: 0;
+	box-sizing: border-box;
+	border-radius:10px;
+	border-color: rgb(160,160,160);
+	min-height: 140px;
+	max-height: 170px;
+	font-size: 16px;
+	padding: 15px;
+}
+.missed-reason-dialog .pallete-title{
+	color: #f44336;
+}
+.missed-reason-dialog .pallete-button{
+	background: #f44336;
+}
+
+.pallete-title input{
+	padding: 2px 15px;
+	font-size: 24px;
+	border: 1px solid #666;
+	border-radius: 10px;
+	box-sizing: border-box;
+	width: 310px;
+}
+
+input{
+	color: inherit;
+	font: inherit;
+}
+
+
+.medicine-dialog-center .pallete-text-1{
+	margin-top: 35px;
+}
+.pallete-text-1 input{
+	padding: 5px 15px;
+	font-size: 20px;
+	border: 1px solid #666;
+	border-radius: 10px;
+	box-sizing: border-box;
+	width: 160px;
+	text-align: right;
+}
+
+.medicine-dialog-center .pallete-text-2, 
+.medicine-dialog-center .pallete-text-3{
+	margin-top: 15px; 
+}
+.pallete-text-2 input, .pallete-text-3 input{
+	padding: 7px 15px;
+	font-size: 17px;
+	border: 1px solid #666;
+	border-radius: 10px;
+	box-sizing: border-box;
+	width: 140px;
+	text-align: right;
+}
+.pallete-text-2 input{
+	width: 220px;
+}
+
+.medicine-dialog-center .pallete-button, .missed-reason-dialog .pallete-button{
+	width: calc(100% - 50px);
+	bottom: 20px;
+}
+
+.background-blur{
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background: rgba(0,0,0,0.6);
+	z-index: -1;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: 400ms opacity;
+}
+
+/* Login | SignUp */
+.dialog{
+	background: rgb(221,230,242);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	transform: translate3d(0,100vh,0);
+	transition: 600ms;
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	z-index: 9999;
+}
+.focus{	transform: translate3d(0,0,0);
+}
+.login-modal{
+	width: 280px;
+	position: absolute;
+	height: auto;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-55%);
+	text-align: center;
+	background: white;
+	border-radius: 10px;
+	padding: 50px 40px;
+	padding-bottom: 20px;
+	padding-top: 35px;
+	box-shadow: 0 0 5px -3px rgba(0,0,0,0.2);
+}
+.login-head{
+	padding-bottom:20px;
+	border-bottom: 1px solid rgba(192,200,211,0.3);
+	margin-bottom: 10px;
+}
+.login-head h1{
+
+	font-size: 24px;
+	margin: 0;
+	color: rgb(58,71,90);
+	margin-bottom: 10px;
+}
+.login-head h3{
+
+	font-size: 14px;
+	color: rgb(158,171,190);
+	margin: 0;
+}
+.input-group{
+	margin-bottom: 15px;
+	font-family: "myfontMedium", Arial;
+	font-size: 14px;
+	cursor: pointer;
+}
+.input-group label{
+	display: block;
+	text-align: left;
+	margin-bottom: 10px;
+	letter-spacing: 0.5px;
+}
+.input-group i{
+	font-size: 12px;
+	color: red;
+}
+.input-group input{
+	width: 100%;
+	height: 40px;
+	padding: 0px 0;
+	border-radius: 7px;
+	border: 1px solid rgba(152,165,180,0.4);
+	text-indent: 15px;
+	transition:0.5s;
+	font-size: 16px;
+	background: rgb(255,251,216);
+}
+input:focus{
+	outline: none;
+	border-color: rgba(0,170,247,0.7);
+}
+.submit{
+	height: 45px;
+	background: rgb(0,170,247);
+	border-radius: 7px;
+	line-height: 40px;
+	margin-top: 25px;
+	cursor: pointer;
+	transition:0.5s;
+}
+.submit:hover, .submit:active{ background: rgb(0,155,227); 
+}
+input[type="submit"]{
+	background: transparent;
+	border: 0;
+	color: white;
+	height: 100%;
+	font-family: "myfontMedium", Arial;
+	font-size: 18px;
+    width:100%;
+    cursor: pointer;
+}
+.login-modal p{
+	margin: 0;
+	margin-top: 5px;
+	font-size: 12px;
+}
+.login-modal p span{
+	font-weight: 600;
+	color: rgb(0,170,247);
+	font-size: 14px;
+	text-decoration: underline;
+	cursor: pointer;
+}

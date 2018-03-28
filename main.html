@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title>Registration Form</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+   
+</head>
+<body>
+	<section class="dialog login-dialog">
+		<div class="login-modal">
+			<div class="login-head">
+				<h1>Welcome to ReMed</h1>
+				<h3>Please Enter Your Credentials</h3>
+			</div>
+			<div class="input-group">
+				<label for="uname">Email</label>
+				<input type="text" id="emailx" name="uname">
+			</div>
+			<div class="input-group">
+				<label for="password">Password <i></i></label>
+				<input type="password" id="passwordx" name="password">
+			</div>
+			<div class="submit" id="login" onclick="authLogin()">
+				<input type="submit" value="Login">
+			</div>
+			<p>Don't have an account? <span id="signup-focus-trigger">Sign Up</span></p>
+		</div>
+	</section>
+	<section class="dialog signup-dialog">
+		<div class="login-modal">
+			<div class="login-head">
+				<h1>Sign Up!</h1>
+				<h3>ReMed - Application to Remind Medicines</h3>
+			</div>
+
+			<div class="input-group">
+				<label for="uname">Name</label>
+				<input type="text" id="name" name="uname">
+			</div>
+			<div class="input-group">
+				<label for="uname">Age</label>
+				<input type="text" id="age" name="uname">
+			</div>
+			<div class="input-group">
+				<label for="uname">Email</label>
+				<input type="text" id="email" name="uname">
+			</div>
+			<div class="input-group">
+				<label for="password">Password <i></i></label>
+				<input type="password" id="password" name="password">
+			</div>
+			<div class="submit" id="sign-up" onclick="signUp()">
+				<input type="submit" value="Sign Up">
+			</div>
+
+			<p>Already have an account? <span id="login-focus-trigger">Login</span></p>
+		</div>
+	</section>
+
+	<main>
+		<header>
+			<div class="header-sub left">
+				<div class="dash header-sub left"></div>
+				<div class="title header-sub left">ReMed</div>
+			</div>
+			<div class="header-sub right">
+				<div class="search-box-container header-sub right" onclick="logout()">
+					<div class="search-box">Log Out</div>
+				</div>
+				<div class="buttons-container header-sub right">
+					<div class="button-container header-sub right">
+						<div class="button" id="medicines-tab" data-id="3" onclick="changeTab(this)">Medicines</div>
+					</div>
+				</div>
+				<div class="buttons-container header-sub right">
+					<div class="button-container header-sub right">
+						<div class="button" id="missed-tab" data-id="2" onclick="changeTab(this)">Missed</div>
+					</div>
+				</div>
+				<div class="buttons-container header-sub right">
+					<div class="button-container header-sub right">
+						<div class="button selected" id="today-tab" data-id="1" onclick="changeTab(this)">Today</div>
+					</div>
+				</div>
+				
+			</div>
+		</header>
+		<div class="header-seperator"></div>
+		
+		<section class="modal modal-today">
+			<div class="modal-title today-title">
+				Today <br>
+				<span id="date">21</span> November 2017
+			</div>
+			<div class="palletes-container">
+				
+			</div>
+		</section>
+		<section class="modal modal-missed">
+			<div class="modal-title missed-title">
+				Missed
+			</div>
+			<div class="palletes-container">
+				
+			</div>
+		</section>
+		<section class="modal modal-medicines">
+			<div class="modal-title medicines-title">
+				Medicines
+			</div>
+			<div class="palletes-container">
+				<div class="pallete medicine-pallete add-pallete" onclick="addMedicine()">
+					<div class="img-container">
+						<img src="add.svg">
+					</div>
+					<div class="text">Add a medicine</div>
+				</div>
+			</div>
+		</section>
+		
+	</main>
+	<div class="medicine-dialog-center medicine-edit">
+		<div class="medicine-dialog-animate">
+			<div class="pallete-title">
+				<input placeholder="Medicine Name" id="edit-medicine-name">
+			</div>
+			<div class="pallete-text-1">edit &nbsp;<input placeholder="X Tablet" id="edit-medicine-count-type"></div>
+			<div class="pallete-text-2">edit &nbsp;<input placeholder="Daily/Weekly/Montly" id="edit-medicine-frequency"></div>
+			<div class="pallete-text-3">edit &nbsp;<input placeholder="XX AM/PM" id="edit-medicine-time"></div>
+			<div class="pallete-button" id="edit-medicine-save" onclick="hideEditMedicineDialog()">Save</div>
+		</div>
+	</div>
+	<div class="medicine-dialog-center medicine-add">
+		<div class="medicine-dialog-animate">
+			<div class="pallete-title">
+				<input placeholder="Medicine Name" id="add-medicine-name">
+			</div>
+			<div class="pallete-text-1">edit &nbsp;<input placeholder="X Tablet" id="add-medicine-count-type"></div>
+			<div class="pallete-text-2">edit &nbsp;<input placeholder="Daily/Weekly/Montly" id="add-medicine-frequency"></div>
+			<div class="pallete-text-3">edit &nbsp;<input placeholder="XX AM/PM" id="add-medicine-time"></div>
+			<div class="pallete-button" id="add-medicine-save" onclick="hideAddMedicineDialog()">Add</div>
+		</div>
+	</div>
+	<div class="missed-reason-dialog ">
+		<div class="pallete-title">
+			Reason
+		</div>
+		<textarea id="reason"></textarea>
+		<div class="pallete-button" id="edit-reason-save" onclick="hideReasonMissedDialog()">Save</div>
+	</div>
+	<div class="background-blur"></div>
+	<script type="text/javascript" src="script.js"></script>
+	
+</body>
+</html>
